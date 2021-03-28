@@ -10,6 +10,7 @@ import java.util.List;
 import java_ncs_exam.dao.TitleDao;
 import java_ncs_exam.database.JdbcConn;
 import java_ncs_exam.dto.Title;
+import java_ncs_exam.exception.SqlConstraintException;
 
 public class TitleDaoImpl implements TitleDao {
 	private static final TitleDaoImpl instance = new TitleDaoImpl();
@@ -69,9 +70,10 @@ public class TitleDaoImpl implements TitleDao {
 			pstmt.setString(2, title.gettName());
 			return pstmt.executeUpdate();
 		} catch (SQLException e) {
-			e.printStackTrace();
+//			e.printStackTrace();
+			throw new SqlConstraintException();
 		}
-		return 0;
+//		return 0;
 	}
 
 	@Override

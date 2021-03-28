@@ -17,6 +17,7 @@ import java_ncs_exam.content.AbstractCustomTablePanel;
 import java_ncs_exam.exception.EmptyTfException;
 import java_ncs_exam.exception.InValidationException;
 import java_ncs_exam.exception.NotSelectedException;
+import java_ncs_exam.exception.SqlConstraintException;
 
 @SuppressWarnings("serial")
 public abstract class AbstractManagerUI<T> extends JFrame implements ActionListener {
@@ -105,7 +106,7 @@ public abstract class AbstractManagerUI<T> extends JFrame implements ActionListe
 					}
 				}
 			}
-		} catch (InValidationException | EmptyTfException e1) {
+		} catch (InValidationException | EmptyTfException | SqlConstraintException e1) {
 			JOptionPane.showMessageDialog(null, e1.getMessage(), "오류", JOptionPane.ERROR_MESSAGE);
 		} catch (NotSelectedException e1) {
 			JOptionPane.showMessageDialog(null, e1.getMessage(), "선택 오류", JOptionPane.WARNING_MESSAGE);
