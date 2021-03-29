@@ -67,7 +67,7 @@ public class TitlePanel extends AbstractContentPanel<Title> {
 		
 		int titleNo = Integer.parseInt(tfTitleNo.getText().trim());
 		if(!(titleNo>0 && titleNo<1000)) {
-			throw new EmptyTfException();
+			throw new InValidationException();
 		}
 		String titleName = tfTitleName.getText().trim();
 		
@@ -76,14 +76,14 @@ public class TitlePanel extends AbstractContentPanel<Title> {
 
 	public void typeCheck() {
 		if(!Pattern.matches("^[0-9]*$", tfTitleNo.getText()) || !Pattern.matches("^[가-힣]*$", tfTitleName.getText())) {
-			throw new EmptyTfException();
+			throw new InValidationException();
 		}
 	}
 
 	@Override
 	public void validCheck() {
 		if (tfTitleNo.getText().contentEquals("")||tfTitleName.getText().contentEquals("")) {
-			throw new InValidationException();
+			throw new EmptyTfException();
 		}
 		
 	}

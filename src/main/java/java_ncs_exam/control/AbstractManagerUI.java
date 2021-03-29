@@ -30,10 +30,6 @@ public abstract class AbstractManagerUI<T> extends JFrame implements ActionListe
 	protected AbstractCustomTablePanel<T> pList; // AbstractCustomTablePanel
 	protected JMenuItem empListByTitleItem;
 	
-	protected static final String TITLE_MENU = "동일 직책 사원 보기";
-	protected static final String DEPT_MENU = "동일 부서 사원 보기";
-	protected static final String EMP_MENU = "사원 세부정보 보기";
-	
 	public AbstractManagerUI() {
 		setService();		// service 연결
 		initialize();	
